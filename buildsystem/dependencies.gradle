@@ -13,6 +13,7 @@ ext {
     javax_inject_version = '1'
     rx_version = '2.1.0'
     rx_android_version = '2.0.1'
+    anko_version = '0.10.4'
 
     // Test dependencies version
     junit_version = '4.12'
@@ -32,7 +33,11 @@ ext {
             daggerCompiler         : "com.google.dagger:dagger-compiler:$dagger_version",
             dagger                 : "com.google.dagger:dagger:$dagger_version",
             rxJava                 : "io.reactivex.rxjava2:rxjava:$rx_version",
-            rxAndroid              : "io.reactivex.rxjava2:rxandroid:$rx_android_version"
+            rxAndroid              : "io.reactivex.rxjava2:rxandroid:$rx_android_version",
+            ankoCommons            : "org.jetbrains.anko:anko-commons:$anko_version",
+            ankoLayout             : "org.jetbrains.anko:anko-sdk15:$anko_version",
+            ankoAppCompat          : "org.jetbrains.anko:anko-appcompat-v7:$anko_version",
+            ankoRecyclerView       : "org.jetbrains.anko:anko-recyclerview-v7:${anko_version}"
     ]
 
     presentationTestDependencies = [

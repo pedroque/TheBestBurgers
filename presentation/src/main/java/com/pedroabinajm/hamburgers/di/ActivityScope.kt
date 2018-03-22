@@ -1,0 +1,8 @@
+package com.pedroabinajm.hamburgers.di
+
+
+import javax.inject.Scope
+
+@Scope
+@Retention(AnnotationRetention.RUNTIME)
+annotation class ActivityScope

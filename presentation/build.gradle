@@ -48,6 +48,12 @@ dependencies {
     implementation presentationDependencies.kotlin
     kapt presentationDependencies.dataBindingComiler
 
+    // Anko
+    implementation presentationDependencies.ankoCommons
+    implementation presentationDependencies.ankoLayout
+    implementation presentationDependencies.ankoAppCompat
+    implementation presentationDependencies.ankoRecyclerView
+
     // ViewModel and LiveData
     implementation presentationDependencies.archLifecycleExtensions
 
@@ -85,6 +91,10 @@ dependencies {
     }
     androidTestImplementation presentationTestDependencies.mockitoAndroid
     kaptAndroidTest presentationTestDependencies.daggerCompiler
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+}
+repositories {
+    mavenCentral()
 }
 
 @SuppressWarnings("GrMethodMayBeStatic")
