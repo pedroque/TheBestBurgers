@@ -1,9 +1,6 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
-
 apply plugin: 'kotlin-kapt'
 
 ext.versionMajor = 1
@@ -15,7 +12,7 @@ android {
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {
-        applicationId "com.pedroabinajm.hamburgers"
+        applicationId "com.pedroabinajm.thebestburgers"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode versionCode
@@ -46,7 +43,6 @@ dependencies {
 
     // Kotlin
     implementation presentationDependencies.kotlin
-    kapt presentationDependencies.dataBindingComiler
 
     // Anko
     implementation presentationDependencies.ankoCommons

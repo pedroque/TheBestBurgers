@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">presentation</string>
+    <string name="app_name">The best burgers</string>
     <string name="error_network">Ouch.\nSeems like your internet is disconnected.\nCould you check if the modem is plugged on?</string>
     <string name="error_unexpected">Ops!\nSomething is shaking the Force.\nPlease, be careful.</string>
+    <string name="hamburger_rating">%.01f</string>
 </resources>

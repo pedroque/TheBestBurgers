@@ -9,7 +9,6 @@ ext {
     android_support_verion = '27.0.2'
     dagger_version = '2.15'
     lifecycle_extensions_version = '1.1.0'
-    kotlin_data_binding_version = '3.1.0-alpha04'
     javax_inject_version = '1'
     rx_version = '2.1.0'
     rx_android_version = '2.0.1'
@@ -24,7 +23,6 @@ ext {
     presentationDependencies = [
             kotlin                 : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
             archLifecycleExtensions: "android.arch.lifecycle:extensions:$lifecycle_extensions_version",
-            dataBindingComiler     : "com.android.databinding:compiler:$kotlin_data_binding_version",
             appCompatV7            : "com.android.support:appcompat-v7:$android_support_verion",
             supportDesign          : "com.android.support:design:$android_support_verion",
             daggerAndroidSupport   : "com.google.dagger:dagger-android-support:$dagger_version",
