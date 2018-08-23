@@ -12,5 +12,10 @@ class GetHamburgers @Inject constructor(
     fun getHamburgers(
             onNext: ((List<Hamburger>) -> Unit),
             onError: ((Throwable) -> Unit)
-    ) = execute(hamburguerRepository.getHamburgers(), onNext, onError)
+    ) = execute(hamburguerRepository.getHamburgers().map { hamburgers ->
+        hamburgers.sortedByDescending { hamburger ->
+            hamburger.rating
+        }
+    }, onNext, onError)
+
 }
