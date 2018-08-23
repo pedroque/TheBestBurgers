@@ -1,9 +1,9 @@
 package com.pedroabinajm.thebestburgers.di
 
 import android.app.Application
-import com.pedroabinajm.thebestburgers.HamburgersApp
+import com.pedroabinajm.thebestburgers.rx.DefaultSchedulerProvider
+import com.pedroabinajm.thebestburgers.TheBestBurgersApp
 import com.pedroabinajm.thebestburgers.domain.schedulers.SchedulerProvider
-import com.pedroabinajm.thebestburgers.schedulers.DefaultSchedulerProvider
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
@@ -15,7 +15,7 @@ open class AppModule(
 
     @Provides
     @Singleton
-    internal fun provideBaseApp() = application as HamburgersApp
+    internal fun provideBaseApp() = application as TheBestBurgersApp
 
     @Provides
     @Singleton

@@ -1,0 +1,46 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin
+    api dataDependencies.kotlin
+
+    // DI
+    api dataDependencies.dagger
+    api dataDependencies.daggerAndroid
+    api dataDependencies.daggerAndroidSupport
+
+    // ViewModel and LiveData
+    api presentationDependencies.archLifecycleExtensions
+
+    // Android Support
+    api presentationDependencies.appCompatV7
+    api presentationDependencies.supportDesign
+
+    // Anko
+    api presentationDependencies.ankoCommons
+    api presentationDependencies.ankoLayout
+    api presentationDependencies.ankoAppCompat
+    api presentationDependencies.ankoRecyclerView
+
+    // Rx
+    api dataDependencies.rxJava
+    api dataDependencies.rxAndroid
+}

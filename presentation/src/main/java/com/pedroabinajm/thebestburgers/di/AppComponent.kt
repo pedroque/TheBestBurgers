@@ -1,7 +1,7 @@
 package com.pedroabinajm.thebestburgers.di
 
 import android.app.Application
-import com.pedroabinajm.thebestburgers.HamburgersApp
+import com.pedroabinajm.thebestburgers.TheBestBurgersApp
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -12,10 +12,10 @@ import dagger.android.AndroidInjector
     AppModule::class,
     ActivityBuilder::class
 ])
-interface AppComponent : AndroidInjector<HamburgersApp> {
+interface AppComponent : AndroidInjector<TheBestBurgersApp> {
 
     @Component.Builder
-    abstract class Builder : AndroidInjector.Builder<HamburgersApp>() {
+    abstract class Builder : AndroidInjector.Builder<TheBestBurgersApp>() {
         @BindsInstance
         abstract fun application(application: Application): Builder
 

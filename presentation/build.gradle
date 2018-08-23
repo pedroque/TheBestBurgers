@@ -10,7 +10,6 @@ ext.versionCode = 1
 
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
-
     defaultConfig {
         applicationId "com.pedroabinajm.thebestburgers"
         minSdkVersion rootProject.ext.minSdkVersion
@@ -18,14 +17,6 @@ android {
         versionCode versionCode
         versionName computeVersionName()
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-    }
-
-    dataBinding {
-        enabled = true
-    }
-
-    testOptions {
-        unitTests.returnDefaultValues = true
     }
 }
 
@@ -39,19 +30,11 @@ dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':domain')
-    implementation project(':data')
+    implementation project(':core')
+    implementation project(':hamburgers')
 
     // Kotlin
     implementation presentationDependencies.kotlin
-
-    // Anko
-    implementation presentationDependencies.ankoCommons
-    implementation presentationDependencies.ankoLayout
-    implementation presentationDependencies.ankoAppCompat
-    implementation presentationDependencies.ankoRecyclerView
-
-    // ViewModel and LiveData
-    implementation presentationDependencies.archLifecycleExtensions
 
     // Android Support
     implementation presentationDependencies.appCompatV7
@@ -68,11 +51,6 @@ dependencies {
     kapt presentationDependencies.daggerCompiler
     kapt presentationDependencies.daggerAndroidProcessor
 
-    // Test dependencies
-    testImplementation presentationTestDependencies.junit
-    testImplementation presentationTestDependencies.archCoreTesting
-    testImplementation presentationTestDependencies.mockito
-
     // Android test dependencies
     androidTestImplementation presentationTestDependencies.testRunner
     androidTestImplementation presentationTestDependencies.testRules
@@ -87,8 +65,8 @@ dependencies {
     }
     androidTestImplementation presentationTestDependencies.mockitoAndroid
     kaptAndroidTest presentationTestDependencies.daggerCompiler
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
 repositories {
     mavenCentral()
 }

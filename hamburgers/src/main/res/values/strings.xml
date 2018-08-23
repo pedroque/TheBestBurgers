@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Hamburgers</string>
+    <string name="error_hamburger_name_empty">Hamburger name must be filled</string>
+    <string name="error_hamburger_address_empty">Hamburger address must be filled</string>
+    <string name="error_hamburger_rating_empty">Hamburger rating must be between 1 and 5</string>
+    <string name="hamburger_rating">%.01f</string>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Core</string>
+    <string name="error_network">Ouch.\nSeems like your internet is disconnected.\nCould you check if the modem is plugged on?</string>
+    <string name="error_unexpected">Ops!\nSomething is shaking the Force.\nPlease, be careful.</string>
+</resources>
