@@ -1,6 +1,6 @@
 package com.pedroabinajm.thebestburgers.hamburgers.view
 
-import com.pedroabinajm.thebestburgers.domain.Hamburger
+import com.pedroabinajm.thebestburgers.hamburgers.domain.Hamburger
 import javax.inject.Inject
 
 class HamburgerMapper @Inject constructor() {

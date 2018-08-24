@@ -1,12 +1,12 @@
-package com.pedroabinajm.thebestburgers.domain.interactor
+package com.pedroabinajm.thebestburgers.core.domain
 
-import com.pedroabinajm.thebestburgers.domain.schedulers.SchedulerProvider
+import com.pedroabinajm.thebestburgers.core.rx.SchedulerProvider
 import io.reactivex.Completable
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
-abstract class UseCase<T> internal constructor(private val schedulerProvider: SchedulerProvider) {
+abstract class UseCase<T> constructor(private val schedulerProvider: SchedulerProvider) {
     private val disposables: CompositeDisposable = CompositeDisposable()
 
     fun execute(single: Single<T>,

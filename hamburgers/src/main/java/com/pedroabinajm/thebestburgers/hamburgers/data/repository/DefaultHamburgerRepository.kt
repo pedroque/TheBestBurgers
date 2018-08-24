@@ -1,10 +1,10 @@
 package com.pedroabinajm.thebestburgers.hamburgers.data.repository
 
-import com.pedroabinajm.thebestburgers.domain.Hamburger
-import com.pedroabinajm.thebestburgers.domain.repository.HamburgerRepository
 import com.pedroabinajm.thebestburgers.hamburgers.R
 import com.pedroabinajm.thebestburgers.hamburgers.data.exception.InvalidArgumentException
 import com.pedroabinajm.thebestburgers.hamburgers.data.repository.datasource.HamburgerDataSourceFactory
+import com.pedroabinajm.thebestburgers.hamburgers.domain.Hamburger
+import com.pedroabinajm.thebestburgers.hamburgers.domain.repository.HamburgerRepository
 import io.reactivex.Completable
 import io.reactivex.Single
 import javax.inject.Inject

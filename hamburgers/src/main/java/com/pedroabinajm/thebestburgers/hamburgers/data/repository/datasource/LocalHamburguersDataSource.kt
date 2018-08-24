@@ -1,6 +1,6 @@
 package com.pedroabinajm.thebestburgers.hamburgers.data.repository.datasource
 
-import com.pedroabinajm.thebestburgers.domain.Hamburger
+import com.pedroabinajm.thebestburgers.hamburgers.domain.Hamburger
 import io.reactivex.Completable
 import io.reactivex.Single
 import java.util.concurrent.TimeUnit

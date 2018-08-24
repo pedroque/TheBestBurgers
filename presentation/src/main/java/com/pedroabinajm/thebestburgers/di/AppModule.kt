@@ -1,9 +1,9 @@
 package com.pedroabinajm.thebestburgers.di
 
 import android.app.Application
-import com.pedroabinajm.thebestburgers.rx.DefaultSchedulerProvider
 import com.pedroabinajm.thebestburgers.TheBestBurgersApp
-import com.pedroabinajm.thebestburgers.domain.schedulers.SchedulerProvider
+import com.pedroabinajm.thebestburgers.core.rx.SchedulerProvider
+import com.pedroabinajm.thebestburgers.rx.DefaultSchedulerProvider
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

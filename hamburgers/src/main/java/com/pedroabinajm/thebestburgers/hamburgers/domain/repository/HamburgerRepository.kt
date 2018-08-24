@@ -1,6 +1,6 @@
-package com.pedroabinajm.thebestburgers.domain.repository
+package com.pedroabinajm.thebestburgers.hamburgers.domain.repository
 
-import com.pedroabinajm.thebestburgers.domain.Hamburger
+import com.pedroabinajm.thebestburgers.hamburgers.domain.Hamburger
 import io.reactivex.Completable
 import io.reactivex.Single
 

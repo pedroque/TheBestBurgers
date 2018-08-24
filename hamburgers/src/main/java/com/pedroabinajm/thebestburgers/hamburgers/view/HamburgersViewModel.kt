@@ -7,8 +7,8 @@ import com.pedroabinajm.thebestburgers.core.viewmodel.resourceCompleted
 import com.pedroabinajm.thebestburgers.core.viewmodel.resourceError
 import com.pedroabinajm.thebestburgers.core.viewmodel.resourceLoading
 import com.pedroabinajm.thebestburgers.core.viewmodel.resourceSuccess
-import com.pedroabinajm.thebestburgers.domain.Hamburger
-import com.pedroabinajm.thebestburgers.domain.interactor.GetHamburgers
+import com.pedroabinajm.thebestburgers.hamburgers.domain.Hamburger
+import com.pedroabinajm.thebestburgers.hamburgers.domain.usecase.GetHamburgers
 import io.reactivex.Single
 
 class HamburgersViewModel constructor(
