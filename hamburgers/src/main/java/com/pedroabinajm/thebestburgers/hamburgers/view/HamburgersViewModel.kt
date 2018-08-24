@@ -2,11 +2,11 @@ package com.pedroabinajm.thebestburgers.hamburgers.view
 
 import android.arch.lifecycle.MutableLiveData
 import android.arch.lifecycle.ViewModel
-import com.pedroabinajm.thebestburgers.core.viewmodel.Resource
-import com.pedroabinajm.thebestburgers.core.viewmodel.resourceCompleted
-import com.pedroabinajm.thebestburgers.core.viewmodel.resourceError
-import com.pedroabinajm.thebestburgers.core.viewmodel.resourceLoading
-import com.pedroabinajm.thebestburgers.core.viewmodel.resourceSuccess
+import com.pedroabinajm.thebestburgers.core.view.viewmodel.Resource
+import com.pedroabinajm.thebestburgers.core.view.viewmodel.resourceCompleted
+import com.pedroabinajm.thebestburgers.core.view.viewmodel.resourceError
+import com.pedroabinajm.thebestburgers.core.view.viewmodel.resourceLoading
+import com.pedroabinajm.thebestburgers.core.view.viewmodel.resourceSuccess
 import com.pedroabinajm.thebestburgers.hamburgers.domain.Hamburger
 import com.pedroabinajm.thebestburgers.hamburgers.domain.usecase.GetHamburgers
 import io.reactivex.Single

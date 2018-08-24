@@ -4,8 +4,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import com.pedroabinajm.thebestburgers.core.base.ReplaceableAdapter
-import com.pedroabinajm.thebestburgers.core.extensions.inflate
+import com.pedroabinajm.thebestburgers.core.view.base.ReplaceableAdapter
+import com.pedroabinajm.thebestburgers.core.view.extension.inflate
 import com.pedroabinajm.thebestburgers.hamburgers.R
 
 class HamburgersAdapter : ReplaceableAdapter<HamburgerModel, HamburgersAdapter.ViewHolder>() {

@@ -1,4 +1,4 @@
-package com.pedroabinajm.thebestburgers.core.anko
+package com.pedroabinajm.thebestburgers.core.view.anko
 
 import android.graphics.Color
 import android.support.annotation.StringRes
@@ -7,9 +7,9 @@ import android.view.Gravity
 import android.view.ViewManager
 import android.widget.TextView
 import com.pedroabinajm.thebestburgers.core.R
-import com.pedroabinajm.thebestburgers.core.extensions.friendlyMessage
-import com.pedroabinajm.thebestburgers.core.extensions.showIf
-import com.pedroabinajm.thebestburgers.core.viewmodel.Resource
+import com.pedroabinajm.thebestburgers.core.view.extension.friendlyMessage
+import com.pedroabinajm.thebestburgers.core.view.extension.showIf
+import com.pedroabinajm.thebestburgers.core.view.viewmodel.Resource
 import org.jetbrains.anko.textColor
 import org.jetbrains.anko.textView
 

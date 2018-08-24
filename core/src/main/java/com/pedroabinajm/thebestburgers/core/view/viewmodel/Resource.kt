@@ -1,4 +1,4 @@
-package com.pedroabinajm.thebestburgers.core.viewmodel
+package com.pedroabinajm.thebestburgers.core.view.viewmodel
 
 data class Resource<out T>(
         val status: Status,

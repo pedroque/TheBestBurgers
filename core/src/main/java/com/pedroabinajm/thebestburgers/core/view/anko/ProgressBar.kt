@@ -1,9 +1,9 @@
-package com.pedroabinajm.thebestburgers.core.anko
+package com.pedroabinajm.thebestburgers.core.view.anko
 
 import android.view.ViewManager
 import android.widget.ProgressBar
-import com.pedroabinajm.thebestburgers.core.viewmodel.Resource
-import com.pedroabinajm.thebestburgers.core.extensions.showIf
+import com.pedroabinajm.thebestburgers.core.view.viewmodel.Resource
+import com.pedroabinajm.thebestburgers.core.view.extension.showIf
 import org.jetbrains.anko.progressBar
 
 fun ViewManager.progressBar(

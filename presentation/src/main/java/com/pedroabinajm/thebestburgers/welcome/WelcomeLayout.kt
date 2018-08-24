@@ -3,10 +3,10 @@ package com.pedroabinajm.thebestburgers.welcome
 import android.support.v7.widget.Toolbar
 import android.view.Gravity
 import com.pedroabinajm.thebestburgers.R
-import com.pedroabinajm.thebestburgers.core.anko.ActivityAnkoComponent
-import com.pedroabinajm.thebestburgers.core.anko.bodyText
-import com.pedroabinajm.thebestburgers.core.anko.titleText
-import com.pedroabinajm.thebestburgers.core.extensions.defaultPadding
+import com.pedroabinajm.thebestburgers.core.view.anko.ActivityAnkoComponent
+import com.pedroabinajm.thebestburgers.core.view.anko.bodyText
+import com.pedroabinajm.thebestburgers.core.view.anko.titleText
+import com.pedroabinajm.thebestburgers.core.view.extension.defaultPadding
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.appcompat.v7.toolbar
 import org.jetbrains.anko.button

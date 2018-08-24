@@ -1,4 +1,4 @@
-package com.pedroabinajm.thebestburgers.core.base
+package com.pedroabinajm.thebestburgers.core.view.base
 
 import android.support.annotation.MainThread
 import android.support.v7.util.DiffUtil

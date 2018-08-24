@@ -3,8 +3,8 @@ package com.pedroabinajm.thebestburgers.hamburgers.view
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.Observer
 import android.os.Bundle
-import com.pedroabinajm.thebestburgers.core.anko.AnkoActivity
-import com.pedroabinajm.thebestburgers.core.viewmodel.Resource
+import com.pedroabinajm.thebestburgers.core.view.anko.AnkoActivity
+import com.pedroabinajm.thebestburgers.core.view.viewmodel.Resource
 import javax.inject.Inject
 
 class HamburgersActivity : AnkoActivity<HamburgersLayout>() {

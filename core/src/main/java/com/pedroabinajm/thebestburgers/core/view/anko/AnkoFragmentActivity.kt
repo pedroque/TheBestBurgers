@@ -1,4 +1,4 @@
-package com.pedroabinajm.thebestburgers.core.anko
+package com.pedroabinajm.thebestburgers.core.view.anko
 
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity

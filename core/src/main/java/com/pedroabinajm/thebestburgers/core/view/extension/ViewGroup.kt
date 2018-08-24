@@ -1,4 +1,4 @@
-package com.pedroabinajm.thebestburgers.core.extensions
+package com.pedroabinajm.thebestburgers.core.view.extension
 
 import android.support.annotation.LayoutRes
 import android.view.LayoutInflater

@@ -1,8 +1,8 @@
-package com.pedroabinajm.thebestburgers.core.anko
+package com.pedroabinajm.thebestburgers.core.view.anko
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import com.pedroabinajm.thebestburgers.core.base.BaseActivity
+import com.pedroabinajm.thebestburgers.core.view.base.BaseActivity
 import org.jetbrains.anko.setContentView
 
 abstract class AnkoActivity<UI : ActivityAnkoComponent<out AppCompatActivity>> : BaseActivity() {

@@ -1,4 +1,4 @@
-package com.pedroabinajm.thebestburgers.core.extensions
+package com.pedroabinajm.thebestburgers.core.view.extension
 
 import com.pedroabinajm.thebestburgers.core.R
 import java.io.IOException

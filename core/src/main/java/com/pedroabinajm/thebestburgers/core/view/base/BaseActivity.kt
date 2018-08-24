@@ -1,4 +1,4 @@
-package com.pedroabinajm.thebestburgers.core.base
+package com.pedroabinajm.thebestburgers.core.view.base
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity

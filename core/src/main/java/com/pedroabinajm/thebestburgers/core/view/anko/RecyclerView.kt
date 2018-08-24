@@ -1,9 +1,9 @@
-package com.pedroabinajm.thebestburgers.core.anko
+package com.pedroabinajm.thebestburgers.core.view.anko
 
 import android.support.v7.widget.RecyclerView
 import android.view.ViewManager
-import com.pedroabinajm.thebestburgers.core.extensions.showIf
-import com.pedroabinajm.thebestburgers.core.viewmodel.Resource
+import com.pedroabinajm.thebestburgers.core.view.extension.showIf
+import com.pedroabinajm.thebestburgers.core.view.viewmodel.Resource
 import org.jetbrains.anko.custom.ankoView
 
 
