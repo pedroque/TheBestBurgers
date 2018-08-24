@@ -1,4 +1,4 @@
-package com.pedroabinajm.thebestburgers.hamburgers
+package com.pedroabinajm.thebestburgers.hamburgers.di
 
 import com.pedroabinajm.thebestburgers.domain.interactor.GetHamburgers
 import com.pedroabinajm.thebestburgers.domain.repository.HamburgerRepository
