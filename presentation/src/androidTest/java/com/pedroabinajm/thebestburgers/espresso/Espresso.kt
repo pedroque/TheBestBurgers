@@ -20,6 +20,13 @@ fun withViewId(
 }
 
 fun withViewText(
+        text: String,
+        then: ViewInteraction.() -> Unit
+) = with(onView(withText(text))) {
+    then()
+}
+
+fun withViewText(
         @StringRes text: Int,
         then: ViewInteraction.() -> Unit
 ) = with(onView(withText(text))) {

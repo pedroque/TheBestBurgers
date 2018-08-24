@@ -3,5 +3,5 @@
     <string name="welcome_title_text">The best burgers by Pedro Abinajm</string>
     <string name="welcome_body_text">Pedro Abinajm is a huge burger lover and here you\'ll be able to see every burgers restaurants he has ever visited and look at the score given by him for each one</string>
     <string name="pick_favorite_burger">Pick your favorite burger</string>
-    <string name="favorite_burger_hint">Pick your favorite burger</string>
+    <string name="favorite_burger_hint">No favorite burger</string>
 </resources>

@@ -11,3 +11,5 @@ fun trackIntents(tracked: () -> Unit) {
 }
 
 inline fun <reified T> intendedComponent() = intended(hasComponent(T::class.java.name))
+
+inline fun <reified T> intending() = Intents.intending(hasComponent(T::class.java.name))
