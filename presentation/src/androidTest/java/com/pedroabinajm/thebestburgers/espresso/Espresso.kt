@@ -9,6 +9,8 @@ import android.support.test.espresso.assertion.ViewAssertions.matches
 import android.support.test.espresso.matcher.ViewMatchers
 import android.support.test.espresso.matcher.ViewMatchers.withId
 import android.support.test.espresso.matcher.ViewMatchers.withText
+import android.view.View
+import org.hamcrest.Matcher
 
 fun withViewId(
         viewId: Int,
@@ -23,6 +25,10 @@ fun withViewText(
 ) = with(onView(withText(text))) {
     then()
 }
+
+fun ViewInteraction.assert(
+        matcher: () -> Matcher<View>
+) = check(matches(matcher()))
 
 fun ViewInteraction.hasErrorText(
         errorText: String,
