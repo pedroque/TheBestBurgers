@@ -1,7 +1,9 @@
 package com.pedroabinajm.thebestburgers.hamburgers.view
 
+import android.app.Activity
 import android.arch.lifecycle.LifecycleOwner
 import android.arch.lifecycle.Observer
+import android.content.Intent
 import android.os.Bundle
 import com.pedroabinajm.thebestburgers.core.view.anko.AnkoActivity
 import com.pedroabinajm.thebestburgers.core.view.viewmodel.Resource
@@ -38,4 +40,13 @@ class HamburgersActivity : AnkoActivity<HamburgersLayout>() {
             ui.resource = it
         })
     }
+
+    fun onBurgerClick(hamburger: HamburgerModel) {
+        setResult(Activity.RESULT_OK, Intent().apply {
+            putExtra(PICKED_HAMBURGER, hamburger)
+        })
+        finish()
+    }
 }
+
+const val PICKED_HAMBURGER = "picked_hamburger"

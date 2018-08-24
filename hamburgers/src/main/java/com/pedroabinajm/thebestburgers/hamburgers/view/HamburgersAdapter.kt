@@ -9,6 +9,8 @@ import com.pedroabinajm.thebestburgers.core.view.extension.inflate
 import com.pedroabinajm.thebestburgers.hamburgers.R
 
 class HamburgersAdapter : ReplaceableAdapter<HamburgerModel, HamburgersAdapter.ViewHolder>() {
+    var onBurgerClick: (hamburger: HamburgerModel) -> Unit = {}
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = parent.inflate(R.layout.item_hamburger)
         return ViewHolder(view)
@@ -29,5 +31,11 @@ class HamburgersAdapter : ReplaceableAdapter<HamburgerModel, HamburgersAdapter.V
         val hamburgerNameText: TextView = view.findViewById(R.id.hamburger_name_text)
         val hamburgerAddressText: TextView = view.findViewById(R.id.hamburger_address_text)
         val hamburgerRatingText: TextView = view.findViewById(R.id.hamburger_rating_text)
+
+        init {
+            view.setOnClickListener {
+                onBurgerClick(items[adapterPosition])
+            }
+        }
     }
 }

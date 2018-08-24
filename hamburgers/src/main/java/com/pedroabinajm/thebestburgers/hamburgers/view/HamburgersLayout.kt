@@ -35,6 +35,10 @@ class HamburgersLayout : ActivityAnkoComponent<HamburgersActivity> {
         }
 
     override fun createView(ui: AnkoContext<HamburgersActivity>) = with(ui) {
+        hamburgersAdapter.onBurgerClick = {
+            ui.owner.onBurgerClick(it)
+        }
+
         verticalLayout {
             toolbar = toolbar {
                 lparams(width = matchParent)
