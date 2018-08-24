@@ -17,6 +17,7 @@ ext {
     // Test dependencies version
     junit_version = '4.12'
     mockito_version = '2.13.0'
+    mockito_kotlin_version = '1.6.0'
     testrunner_version = '1.0.1'
     espresso_version = '3.0.1'
 
@@ -50,12 +51,14 @@ ext {
             junit          : "junit:junit:$junit_version",
             archCoreTesting: "android.arch.core:core-testing:$lifecycle_extensions_version",
             mockito        : "org.mockito:mockito-core:$mockito_version",
+            mockitoKotlin  : "com.nhaarman:mockito-kotlin-kt1.1:$mockito_kotlin_version",
             testRunner     : "com.android.support.test:runner:$testrunner_version",
             testRules      : "com.android.support.test:rules:$testrunner_version",
             espresso       : "com.android.support.test.espresso:espresso-core:$espresso_version",
             espressoContrib: "com.android.support.test.espresso:espresso-contrib:$espresso_version",
             mockitoAndroid : "org.mockito:mockito-android:$mockito_version",
-            daggerCompiler : "com.google.dagger:dagger-compiler:$dagger_version"
+            daggerCompiler : "com.google.dagger:dagger-compiler:$dagger_version",
+            espressoIntents: "com.android.support.test.espresso:espresso-intents:$espresso_version"
     ]
 
     domainDependencies = [

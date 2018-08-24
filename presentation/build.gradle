@@ -26,6 +26,7 @@ kapt {
 
 dependencies {
     def presentationDependencies = rootProject.ext.presentationDependencies
+    def coreTestDependencies = rootProject.ext.coreTestDependencies
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':core')
@@ -35,6 +36,26 @@ dependencies {
     kapt presentationDependencies.daggerCompiler
     kapt presentationDependencies.daggerAndroidProcessor
     kaptAndroidTest presentationDependencies.daggerCompiler
+
+    // test dependencies
+    testImplementation coreTestDependencies.junit
+    testImplementation coreTestDependencies.mockitoKotlin
+    testImplementation coreTestDependencies.mockito
+
+    // Android test dependencies
+    androidTestImplementation coreTestDependencies.testRunner
+    androidTestImplementation coreTestDependencies.testRules
+    androidTestImplementation coreTestDependencies.espresso, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestImplementation coreTestDependencies.espressoContrib, {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude module: 'recyclerview-v7'
+    }
+    androidTestImplementation coreTestDependencies.mockitoAndroid
+    androidTestImplementation coreTestDependencies.espressoIntents
 }
 
 repositories {
