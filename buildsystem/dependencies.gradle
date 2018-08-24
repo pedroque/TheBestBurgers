@@ -21,24 +21,32 @@ ext {
     espresso_version = '3.0.1'
 
     presentationDependencies = [
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$dagger_version",
+            daggerCompiler        : "com.google.dagger:dagger-compiler:$dagger_version"
+    ]
+
+    hamburgersDependencies = [
+            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$dagger_version",
+            daggerCompiler        : "com.google.dagger:dagger-compiler:$dagger_version"
+    ]
+
+    coreDependencies = [
             kotlin                 : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
-            archLifecycleExtensions: "android.arch.lifecycle:extensions:$lifecycle_extensions_version",
             appCompatV7            : "com.android.support:appcompat-v7:$android_support_verion",
             supportDesign          : "com.android.support:design:$android_support_verion",
-            daggerAndroidSupport   : "com.google.dagger:dagger-android-support:$dagger_version",
-            daggerAndroid          : "com.google.dagger:dagger-android:$dagger_version",
-            daggerAndroidProcessor : "com.google.dagger:dagger-android-processor:$dagger_version",
-            daggerCompiler         : "com.google.dagger:dagger-compiler:$dagger_version",
-            dagger                 : "com.google.dagger:dagger:$dagger_version",
-            rxJava                 : "io.reactivex.rxjava2:rxjava:$rx_version",
-            rxAndroid              : "io.reactivex.rxjava2:rxandroid:$rx_android_version",
+            archLifecycleExtensions: "android.arch.lifecycle:extensions:$lifecycle_extensions_version",
             ankoCommons            : "org.jetbrains.anko:anko-commons:$anko_version",
             ankoLayout             : "org.jetbrains.anko:anko-sdk15:$anko_version",
             ankoAppCompat          : "org.jetbrains.anko:anko-appcompat-v7:$anko_version",
-            ankoRecyclerView       : "org.jetbrains.anko:anko-recyclerview-v7:${anko_version}"
+            ankoRecyclerView       : "org.jetbrains.anko:anko-recyclerview-v7:${anko_version}",
+            daggerAndroidSupport   : "com.google.dagger:dagger-android-support:$dagger_version",
+            daggerAndroid          : "com.google.dagger:dagger-android:$dagger_version",
+            dagger                 : "com.google.dagger:dagger:$dagger_version",
+            rxJava                 : "io.reactivex.rxjava2:rxjava:$rx_version",
+            rxAndroid              : "io.reactivex.rxjava2:rxandroid:$rx_android_version"
     ]
 
-    presentationTestDependencies = [
+    coreTestDependencies = [
             junit          : "junit:junit:$junit_version",
             archCoreTesting: "android.arch.core:core-testing:$lifecycle_extensions_version",
             mockito        : "org.mockito:mockito-core:$mockito_version",
@@ -48,22 +56,6 @@ ext {
             espressoContrib: "com.android.support.test.espresso:espresso-contrib:$espresso_version",
             mockitoAndroid : "org.mockito:mockito-android:$mockito_version",
             daggerCompiler : "com.google.dagger:dagger-compiler:$dagger_version"
-    ]
-
-    dataDependencies = [
-            kotlin                : "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version",
-            daggerAndroidSupport  : "com.google.dagger:dagger-android-support:$dagger_version",
-            daggerAndroid         : "com.google.dagger:dagger-android:$dagger_version",
-            daggerAndroidProcessor: "com.google.dagger:dagger-android-processor:$dagger_version",
-            daggerCompiler        : "com.google.dagger:dagger-compiler:$dagger_version",
-            dagger                : "com.google.dagger:dagger:$dagger_version",
-            rxJava                : "io.reactivex.rxjava2:rxjava:$rx_version",
-            rxAndroid             : "io.reactivex.rxjava2:rxandroid:$rx_android_version"
-    ]
-
-    dataTestDependencies = [
-            junit  : "junit:junit:$junit_version",
-            mockito: "org.mockito:mockito-core:$mockito_version",
     ]
 
     domainDependencies = [

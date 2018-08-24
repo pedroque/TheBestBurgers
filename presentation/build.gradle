@@ -26,45 +26,16 @@ kapt {
 
 dependencies {
     def presentationDependencies = rootProject.ext.presentationDependencies
-    def presentationTestDependencies = rootProject.ext.presentationTestDependencies
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':domain')
     implementation project(':core')
     implementation project(':hamburgers')
 
-    // Kotlin
-    implementation presentationDependencies.kotlin
-
-    // Android Support
-    implementation presentationDependencies.appCompatV7
-    implementation presentationDependencies.supportDesign
-
-    // Rx
-    implementation presentationDependencies.rxJava
-    implementation presentationDependencies.rxAndroid
-
     // DI
-    implementation presentationDependencies.dagger
-    implementation presentationDependencies.daggerAndroid
-    implementation presentationDependencies.daggerAndroidSupport
     kapt presentationDependencies.daggerCompiler
     kapt presentationDependencies.daggerAndroidProcessor
-
-    // Android test dependencies
-    androidTestImplementation presentationTestDependencies.testRunner
-    androidTestImplementation presentationTestDependencies.testRules
-    androidTestImplementation presentationTestDependencies.espresso, {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    }
-    androidTestImplementation presentationTestDependencies.espressoContrib, {
-        exclude group: 'com.android.support', module: 'appcompat'
-        exclude group: 'com.android.support', module: 'support-v4'
-        exclude group: 'com.android.support', module: 'support-annotations'
-        exclude module: 'recyclerview-v7'
-    }
-    androidTestImplementation presentationTestDependencies.mockitoAndroid
-    kaptAndroidTest presentationTestDependencies.daggerCompiler
+    kaptAndroidTest presentationDependencies.daggerCompiler
 }
 
 repositories {

@@ -22,19 +22,17 @@ android {
 }
 
 dependencies {
+    def hamburgersDependencies = rootProject.ext.hamburgersDependencies
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':domain')
     implementation project(':core')
     application project(':presentation')
 
     // DI
-    kapt dataDependencies.daggerCompiler
-    kapt dataDependencies.daggerAndroidProcessor
-
-    // Test dependencies
-    testImplementation presentationTestDependencies.junit
-    testImplementation presentationTestDependencies.archCoreTesting
-    testImplementation presentationTestDependencies.mockito
+    kapt hamburgersDependencies.daggerCompiler
+    kapt hamburgersDependencies.daggerAndroidProcessor
+    kaptAndroidTest hamburgersDependencies.daggerCompiler
 }
 
 repositories {

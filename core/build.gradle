@@ -18,29 +18,45 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    def coreDependencies = rootProject.ext.coreDependencies
+    def coreTestDependencies = rootProject.ext.coreTestDependencies
 
     // Kotlin
-    api dataDependencies.kotlin
+    api coreDependencies.kotlin
 
     // DI
-    api dataDependencies.dagger
-    api dataDependencies.daggerAndroid
-    api dataDependencies.daggerAndroidSupport
+    api coreDependencies.dagger
+    api coreDependencies.daggerAndroid
+    api coreDependencies.daggerAndroidSupport
 
     // ViewModel and LiveData
-    api presentationDependencies.archLifecycleExtensions
+    api coreDependencies.archLifecycleExtensions
 
     // Android Support
-    api presentationDependencies.appCompatV7
-    api presentationDependencies.supportDesign
+    api coreDependencies.appCompatV7
+    api coreDependencies.supportDesign
 
     // Anko
-    api presentationDependencies.ankoCommons
-    api presentationDependencies.ankoLayout
-    api presentationDependencies.ankoAppCompat
-    api presentationDependencies.ankoRecyclerView
+    api coreDependencies.ankoCommons
+    api coreDependencies.ankoLayout
+    api coreDependencies.ankoAppCompat
+    api coreDependencies.ankoRecyclerView
 
     // Rx
-    api dataDependencies.rxJava
-    api dataDependencies.rxAndroid
+    api coreDependencies.rxJava
+    api coreDependencies.rxAndroid
+
+    // Android test dependencies
+    androidTestApi coreTestDependencies.testRunner
+    androidTestApi coreTestDependencies.testRules
+    androidTestApi coreTestDependencies.espresso, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    }
+    androidTestApi coreTestDependencies.espressoContrib, {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude group: 'com.android.support', module: 'support-annotations'
+        exclude module: 'recyclerview-v7'
+    }
+    androidTestApi coreTestDependencies.mockitoAndroid
 }
