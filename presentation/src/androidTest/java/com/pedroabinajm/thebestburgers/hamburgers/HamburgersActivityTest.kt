@@ -21,18 +21,19 @@ class HamburgersActivityTest {
     val activityRule = activityRule<HamburgersActivity>()
 
     private var isBurgersRecyclerVisibleIdlingResource: IdlingResource? = null
+    private val idlingRegistry = IdlingRegistry.getInstance()
 
     @Before
     fun setUp() {
         isBurgersRecyclerVisibleIdlingResource = IsVisibleIdlingResource(
                 activityRule.activity.ui.recyclerView
         )
-        IdlingRegistry.getInstance().register(isBurgersRecyclerVisibleIdlingResource)
+        idlingRegistry.register(isBurgersRecyclerVisibleIdlingResource)
     }
 
     @After
     fun tearDown() {
-        IdlingRegistry.getInstance().unregister(isBurgersRecyclerVisibleIdlingResource)
+        idlingRegistry.unregister(isBurgersRecyclerVisibleIdlingResource)
     }
 
 
