@@ -8,7 +8,7 @@ class IsVisibleIdlingResource(
 ) : IdlingResource {
     private var callback: IdlingResource.ResourceCallback? = null
 
-    override fun getName() = "is view visible idling resource %d".format(hashCode())
+    override fun getName() = "is visible idling resource ${hashCode()}"
 
     override fun isIdleNow(): Boolean {
         val isIdle = view?.visibility == View.VISIBLE
