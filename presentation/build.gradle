@@ -16,7 +16,10 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode versionCode
         versionName computeVersionName()
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "com.pedroabinajm.thebestburgers.runner.BurgersTestRunner"
+    }
+    testOptions {
+        animationsDisabled = true
     }
 }
 
@@ -56,6 +59,7 @@ dependencies {
     }
     androidTestImplementation coreTestDependencies.mockitoAndroid
     androidTestImplementation coreTestDependencies.espressoIntents
+    androidTestImplementation 'com.squareup.rx.idler:rx2-idler:0.9.0'
 }
 
 repositories {

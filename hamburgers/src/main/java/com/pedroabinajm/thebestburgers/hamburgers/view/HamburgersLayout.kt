@@ -1,5 +1,6 @@
 package com.pedroabinajm.thebestburgers.hamburgers.view
 
+import android.support.annotation.VisibleForTesting
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
@@ -20,7 +21,8 @@ import org.jetbrains.anko.verticalLayout
 
 class HamburgersLayout : ActivityAnkoComponent<HamburgersActivity> {
     override var toolbar: Toolbar? = null
-    private var recyclerView: RecyclerView? = null
+    @VisibleForTesting
+    var recyclerView: RecyclerView? = null
     private var errorText: ErrorTextView? = null
     private var progressBar: ProgressBar? = null
     private val hamburgersAdapter = HamburgersAdapter()
@@ -48,6 +50,7 @@ class HamburgersLayout : ActivityAnkoComponent<HamburgersActivity> {
                 lparams(matchParent, matchParent)
 
                 recyclerView = recyclerView {
+                    id = 1
                     lparams(matchParent, matchParent)
                     setResource(resource)
                     layoutManager = LinearLayoutManager(context)

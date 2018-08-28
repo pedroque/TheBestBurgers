@@ -7,9 +7,11 @@ import android.view.animation.AccelerateDecelerateInterpolator
 
 fun View.showIf(predicate: () -> Boolean) {
     if (predicate()) {
-        show()
+        visibility = View.VISIBLE
+        alpha = 1f
     } else {
-        hide()
+        visibility = View.GONE
+        alpha = 0f
     }
 }
 
