@@ -2,18 +2,14 @@ package com.pedroabinajm.thebestburgers.hamburgers
 
 import android.support.test.espresso.IdlingRegistry
 import android.support.test.espresso.IdlingResource
-import android.support.test.espresso.matcher.BoundedMatcher
 import android.support.test.espresso.matcher.ViewMatchers.hasDescendant
 import android.support.test.espresso.matcher.ViewMatchers.withText
-import android.support.v7.widget.RecyclerView
-import android.view.View
 import com.pedroabinajm.thebestburgers.espresso.assert
 import com.pedroabinajm.thebestburgers.espresso.idling.IsVisibleIdlingResource
+import com.pedroabinajm.thebestburgers.espresso.matcher.atPosition
 import com.pedroabinajm.thebestburgers.espresso.withViewId
 import com.pedroabinajm.thebestburgers.hamburgers.view.HamburgersActivity
 import com.pedroabinajm.thebestburgers.rule.activityRule
-import org.hamcrest.Description
-import org.hamcrest.Matcher
 import org.junit.After
 import org.junit.Before
 import org.junit.Rule
@@ -58,16 +54,3 @@ class HamburgersActivityTest {
         }
     }
 }
-
-fun atPosition(position: Int, viewMatcher: Matcher<View>) =
-        object : BoundedMatcher<View, RecyclerView>(RecyclerView::class.java) {
-            override fun describeTo(description: Description) {
-                description.appendText("assert RecyclerView child at %d".format(position))
-            }
-
-            override fun matchesSafely(view: RecyclerView): Boolean {
-                val viewHolder = view.findViewHolderForAdapterPosition(position)
-                        ?: return false
-                return viewMatcher.matches(viewHolder.itemView)
-            }
-        }
