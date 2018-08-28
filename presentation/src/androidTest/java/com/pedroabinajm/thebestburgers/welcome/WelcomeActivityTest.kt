@@ -3,18 +3,18 @@ package com.pedroabinajm.thebestburgers.welcome
 import android.app.Activity
 import android.app.Instrumentation
 import android.content.Intent
-import android.support.test.espresso.Espresso.onView
-import android.support.test.espresso.action.ViewActions.click
-import android.support.test.espresso.assertion.ViewAssertions.matches
-import android.support.test.espresso.intent.Intents
-import android.support.test.espresso.intent.matcher.IntentMatchers
 import android.support.test.espresso.matcher.ViewMatchers.isDisplayed
-import android.support.test.espresso.matcher.ViewMatchers.withText
-import android.support.test.rule.ActivityTestRule
 import com.pedroabinajm.thebestburgers.R
+import com.pedroabinajm.thebestburgers.espresso.assert
+import com.pedroabinajm.thebestburgers.espresso.click
+import com.pedroabinajm.thebestburgers.espresso.intent.intendedComponent
+import com.pedroabinajm.thebestburgers.espresso.intent.intending
+import com.pedroabinajm.thebestburgers.espresso.intent.trackIntents
+import com.pedroabinajm.thebestburgers.espresso.withViewText
 import com.pedroabinajm.thebestburgers.hamburgers.view.HamburgerModel
 import com.pedroabinajm.thebestburgers.hamburgers.view.HamburgersActivity
 import com.pedroabinajm.thebestburgers.hamburgers.view.PICKED_HAMBURGER
+import com.pedroabinajm.thebestburgers.rule.activityRule
 import org.junit.Rule
 import org.junit.Test
 
@@ -22,44 +22,53 @@ class WelcomeActivityTest {
 
     @Rule
     @JvmField
-    val activityRule = ActivityTestRule<WelcomeActivity>(WelcomeActivity::class.java)
+    val activityRule = activityRule<WelcomeActivity>()
+
+    private val pickHamburgersResult = Instrumentation.ActivityResult(
+            Activity.RESULT_OK,
+            Intent().apply {
+                putExtra(PICKED_HAMBURGER, HamburgerModel(
+                        NAME,
+                        RATING,
+                        ADDRESS
+                ))
+            }
+    )
 
     @Test
     fun checkTitleLabelIsVisible() {
-        onView(withText(R.string.welcome_title_text))
-                .check(matches(isDisplayed()))
+        withViewText(R.string.welcome_title_text) {
+            assert {
+                isDisplayed()
+            }
+        }
     }
 
     @Test
     fun checkPickBurgersShowActivity() {
-        Intents.init()
-        onView(withText(R.string.pick_favorite_burger))
-                .perform(click())
-
-        Intents.intended(IntentMatchers.hasComponent(HamburgersActivity::class.java.name))
-        Intents.release()
+        trackIntents {
+            withViewText(R.string.pick_favorite_burger) {
+                click()
+            }
+            intendedComponent<HamburgersActivity>()
+        }
     }
 
     @Test
     fun pickBurgerShowItsName() {
-        Intents.init()
-        Intents.intending(IntentMatchers.hasComponent(HamburgersActivity::class.java.name))
-                .respondWith(Instrumentation.ActivityResult(
-                        Activity.RESULT_OK,
-                        Intent().apply {
-                            putExtra(PICKED_HAMBURGER, HamburgerModel(
-                                    NAME,
-                                    RATING,
-                                    ADDRESS
-                            ))
-                        }
-                ))
+        trackIntents {
+            intending<HamburgersActivity>().respondWith(pickHamburgersResult)
 
-        onView(withText(R.string.pick_favorite_burger))
-                .perform(click())
+            withViewText(R.string.pick_favorite_burger) {
+                click()
+            }
 
-        onView(withText(NAME)).check(matches(isDisplayed()))
-        Intents.release()
+            withViewText(NAME) {
+                assert {
+                    isDisplayed()
+                }
+            }
+        }
     }
 }
 
